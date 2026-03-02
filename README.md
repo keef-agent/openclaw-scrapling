@@ -65,11 +65,9 @@ python3 scripts/scrapling-fetch.py "https://example.com" --html
 
 ## Why this exists
 
-[@dr_cintas put it better than I can](https://x.com/dr_cintas/status/2028544202380845507):
+`web_fetch` fails silently on Cloudflare-protected sites. You get an empty string and no error. Your cron thinks it worked. It didn't.
 
-> "OpenClaw just got an unfair advantage over every other AI agent. It can now use Scrapling to scrape any website without getting blocked by Cloudflare. You don't need to maintain selectors when websites update their structure. 774x faster than BeautifulSoup. Zero bot detection."
-
-That tweet prompted me to package this as a proper OpenClaw skill so anyone can drop it in and go.
+Scrapling solves this with headless Playwright and fingerprint spoofing. This skill packages it as a clean CLI so any OpenClaw agent can use it in one line — no setup, no config, no guessing.
 
 ---
 
